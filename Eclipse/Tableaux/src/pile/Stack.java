@@ -6,11 +6,7 @@ public class Stack {
 	private int count;
 	public Stack() {
 		// TODO Auto-generated constructor stub
-		//this.count = 1;
-		
 		this.data = new int[1];
-	
-		
 	}
 	
 	public int getCount() {
@@ -28,23 +24,25 @@ public class Stack {
 		return this.count==this.data.length;
 	}
 	
-	public int[] resize(int taille) {
+	public void resize(int taille) {
 		int[] newData = new int[taille];
 		int i=0;
-		for(int a:data) {
-			newData[i++]=a;
+		for( i=0; i<this.count; i++) {
+			newData[i]=this.data[i];
 		}
-		this.count=i;
-		return newData;
+		
+		this.data = newData;
+	
 	}
 	
 	public void push(int val) {
-		if(this.isFull()) {
-			this.data = this.resize(this.count*2);
-		}
-		this.data[this.count]=val;
-		this.count++;
 		
+		if(this.isFull()) {
+			 this.resize(this.count*2);
+		}
+		
+		this.data[this.count]=val;
+		this.count+=1;
 	}
 	
 	public void printData() {
@@ -58,11 +56,14 @@ public class Stack {
 		if(this.isEmpty()) {
 			return -1;
 		}
-		if(this.count < this.data.length/2) {
-			this.data = this.resize(this.data.length/2);
+		
+		int res = this.data[this.count-1];
+		this.count-=1;
+		if(this.count <= this.data.length/2) {
+			 this.resize(this.data.length/2);
 		}
-		this.count--;
-		return this.data[this.count];
+		
+		return res ;
 	}
 
 }
