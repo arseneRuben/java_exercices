@@ -59,9 +59,11 @@ public class Stack {
 		
 		int res = this.data[this.count-1];
 		this.count-=1;
-		if(this.count <= this.data.length/2) {
+		
+		if((this.count <= this.data.length/2)&&(this.count!=1)) {
 			 this.resize(this.data.length/2);
 		}
+		
 		
 		return res ;
 	}
