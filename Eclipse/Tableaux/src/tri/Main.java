@@ -1,4 +1,4 @@
-package Tri;
+package tri;
 
 public class Main {
 
