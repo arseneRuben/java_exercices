@@ -5,6 +5,11 @@ public class Main {
 	public Main() {
 		// TODO Auto-generated constructor stub
 	}
+	public static void printTab(double tab[]) {
+		for (int i = 0; i < tab.length; i++) {
+			System.out.print((Math.round(tab[i]  * 100.0) / 100.0)+ "  ");
+		}
+	}
 	static int  taille = 20;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -20,11 +25,6 @@ public class Main {
 		System.out.println();
 	}
 
-	public static void printTab(double tab[]) {
-		for (int i = 0; i < tab.length; i++) {
-			System.out.print((Math.round(tab[i]  * 100.0) / 100.0)+ "  ");
-		}
-	}
 
 	public static void initTab(double tab[]) {
 		for (int i = 0; i < tab.length; i++) {

@@ -11,9 +11,7 @@ public class Principale {
 	static final int[] checkCapacities = { 1, 1, 2, 4, 4, 8, 8, 8, 8, 16 };
 	public static void main(String[] args) {
 		Stack stack = new Stack();
-		
 		for (int i = 1; i < 10; i++) {
-			
 			stack.push(i);   
 			stack.printData();
 			Assert.check(stack.getCount() == i);

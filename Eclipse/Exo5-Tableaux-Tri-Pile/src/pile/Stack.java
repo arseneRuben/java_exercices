@@ -53,18 +53,12 @@ public class Stack {
 	}
 	
 	public int pop() {
-		if(this.isEmpty()) {
-			return -1;
-		}
-		
 		int res = this.data[this.count-1];
+		this.data[this.count-1]=0;
 		this.count-=1;
-		
-		if((this.count <= this.data.length/2)&&(this.count!=1)) {
+		if((this.count <= this.data.length/2)&&(this.count>=1)) {
 			 this.resize(this.data.length/2);
 		}
-		
-		
 		return res ;
 	}
 
