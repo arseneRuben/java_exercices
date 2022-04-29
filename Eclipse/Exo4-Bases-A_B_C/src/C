@@ -1,0 +1,10 @@
+Liste des types utilises:
+	Type primitif : int
+	Classes : Etudiant, String, Personne Principale
+
+Relation entre ces types:
+	Heritage : Etudiant herite de Personne, 
+	Agregation : String(compose) et Personne(composant), 
+				Personne(compose) et Personne(composant),
+				Personne(compose) et int(composant)
+	Utilisation: Principale utilise les classes String, Personne, Etudiant 
