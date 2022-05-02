@@ -3,9 +3,9 @@ package b;
 public class ServerWeb extends Server{
 
 	private String defaultPage;
-	public ServerWeb(boolean d, int p, String page ) {
+	public ServerWeb(boolean d, String page ) {
 		// TODO Auto-generated constructor stub
-		super(d, p);
+		super(d, 80);
 		this.defaultPage = page;
 	}
 	
@@ -23,7 +23,7 @@ public class ServerWeb extends Server{
 	}
 	
 	public void repondreRequete() {
-		System.out.println("Page web"+this.getDefaultPage());
+		System.out.println("Le serveur Web envoie le contenu du fichier "+ this.getDefaultPage() +" au client via le port "+this.getPort());
 	}
 
 }

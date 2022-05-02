@@ -10,7 +10,9 @@ public abstract class  Server {
 		this.port = p;
 	}
 	
-	public boolean getDemarre() {
+	
+
+	public boolean Demarre() {
 		return this.demarre;
 	}
 	

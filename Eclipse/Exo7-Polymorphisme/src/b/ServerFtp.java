@@ -4,9 +4,9 @@ public class ServerFtp extends Server{
 	private  String nomDuFichier;
 	
 	
-	public ServerFtp(boolean d, int p, String page ) {
+	public ServerFtp(boolean d, String page ) {
 		// TODO Auto-generated constructor stub
-		super(d, p);
+		super(d, 21);
 		this.nomDuFichier = page;
 	}
 	
@@ -19,7 +19,7 @@ public class ServerFtp extends Server{
 	}
 	
 	public void repondreRequete() {
-		System.out.println("Fichier "+this.getNomDuFIchier());
+		System.out.println("Le serveur ftp envoie le fichier "+ this.getNomDuFIchier()+ " au client via le port "+this.getPort());
 	}
 
 }
