@@ -23,10 +23,10 @@ public class Stack {
 	}
 
 	public boolean isFull() {
-		return this.count == this.data.length;
+		return this.count == this.getCapacity();
 	}
 
-	public void resize(int taille) {
+	private void resize(int taille) {
 		if (taille >= this.count) {
 			int[] newData = new int[taille];
 			int i = 0;
@@ -35,6 +35,8 @@ public class Stack {
 			}
 
 			this.data = newData;
+		}else {
+			System.exit(-1);
 		}
 	}
 
@@ -59,7 +61,7 @@ public class Stack {
 		int res = this.data[this.count - 1];
 		this.data[this.count - 1] = 0;
 		this.count -= 1;
-		if ((this.count <= this.data.length / 2) && (this.count >= 1)) {
+		if ((this.count < this.data.length / 2) && (this.count >= 1)) {
 			this.resize(this.data.length / 2);
 		}
 		return res;

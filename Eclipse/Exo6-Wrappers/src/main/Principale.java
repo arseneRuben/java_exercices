@@ -5,7 +5,7 @@ public class Principale {
 		n++;
 	}
 	public static void inc(MyInt n) {
-		n.value++;
+		n.setValue(n.getValue()+1);
 	}
 	
 	public static void main(String[] args) {
