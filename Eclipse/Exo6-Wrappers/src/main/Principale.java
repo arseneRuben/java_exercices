@@ -17,9 +17,15 @@ public class Principale {
 		System.out.println("avant n= "+m);
 		inc(m);
 		System.out.println("apres n= "+m);
+		Days[] d = Days.values();
+		System.out.println("apres n= "+d[2]);
 	}
 	public Principale() {
 		// TODO Auto-generated constructor stub
+		
 	}
 
+	enum Days{
+		MON, TUES, THURS
+	}
 }
