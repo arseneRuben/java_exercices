@@ -8,9 +8,7 @@ public abstract class AbstractContent implements IEnumerable{
 		this.current =0;
 	}
 
-	public Object premier() {
-		return this.current;
-	}
+	
 	
     public abstract Object suivant() ;
     

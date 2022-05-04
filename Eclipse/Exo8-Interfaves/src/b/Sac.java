@@ -12,6 +12,9 @@ public class Sac extends AbstractContent {
 		this.nbElts = 0;
 	}
 
+	public Object premier() {
+		return this.tab[this.current];
+	}
 	public Sac(int tab[]) {
 		// TODO Auto-generated constructor stub
 		super();
@@ -68,10 +71,7 @@ public class Sac extends AbstractContent {
 		System.out.println();
 	}
 
-	public Object premier() {
-		this.current = 0;
-		return this.tab[this.current];
-	}
+	
 
 	@Override
 	public Object suivant() {
