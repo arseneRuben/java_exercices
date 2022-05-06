@@ -12,6 +12,7 @@ public class Sac extends AbstractContent {
 		this.nbElts = 0;
 	}
 
+	
 	public Object premier() {
 		return this.tab[this.current];
 	}
