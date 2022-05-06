@@ -24,7 +24,7 @@ public class Intervalle extends AbstractContent {
 	}
 
 	public Object premier() {
-		return this.current;
+		return this.min;
 	}
 
 	

@@ -14,6 +14,7 @@ public class Sac extends AbstractContent {
 
 	
 	public Object premier() {
+		this.current=0;
 		return this.tab[this.current];
 	}
 	public Sac(int tab[]) {
