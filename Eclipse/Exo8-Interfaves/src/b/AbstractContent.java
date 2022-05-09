@@ -11,7 +11,7 @@ public abstract class AbstractContent implements IEnumerable{
 	
 	
     public abstract Object suivant() ;
-    
+    public abstract void ajouter(int v);
     
 	public void print() {
 		Object v;

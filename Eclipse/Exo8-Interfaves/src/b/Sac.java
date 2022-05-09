@@ -22,7 +22,7 @@ public class Sac extends AbstractContent {
 		super();
 		this.tab = tab;
 		for(int c:tab) {
-			this.push(c);
+			this.ajouter(c);
 		}
 	}
 
@@ -49,19 +49,17 @@ public class Sac extends AbstractContent {
 			for (i = 0; i < this.nbElts; i++) {
 				newData[i] = this.tab[i];
 			}
-
 			this.tab = newData;
 		} else {
 			System.exit(-1);
 		}
 	}
 
-	public void push(int val) {
-
+	 
+	public void ajouter(int val) {
 		if (this.isFull()) {
 			this.resize(this.nbElts * 2);
 		}
-
 		this.tab[this.nbElts] = val;
 		this.nbElts += 1;
 	}
@@ -75,7 +73,6 @@ public class Sac extends AbstractContent {
 
 	
 
-	@Override
 	public Object suivant() {
 		if (this.current < this.nbElts) {
 			this.current++;

@@ -19,6 +19,19 @@ public class Stock {
 		Collections.sort(this.liste);
 	}
 	
+
+	public void sort ( Criteria c) {
+		 switch (c) {
+         case PRICE:
+        	 break;
+         case WEIGHT:
+        	 break;
+         case NAME:
+        	 Collections.sort(this.liste);
+        	 break;
+		 }
+	}
+	
 	public static void main(String[] args) {
 		Stock st = new Stock();
 		st.getListe().add(new Produit("Sac a dos", 150, 10));
