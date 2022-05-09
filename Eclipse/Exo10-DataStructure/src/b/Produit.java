@@ -2,7 +2,7 @@ package b;
 
 import java.util.Comparator;
 
-public class Produit implements Comparable<Produit>, Comparator<Produit>{
+public class Produit implements Comparable<Produit>{
 
 	private String name;
 	private float price;
@@ -53,11 +53,7 @@ public class Produit implements Comparable<Produit>, Comparator<Produit>{
 	
 	}
 
-	@Override
-	public int compare(Produit o1, Produit o2) {
-		// TODO Auto-generated method stub
-		return o1.compareTo(o2);
-	}
+	
 	
 	
 	
