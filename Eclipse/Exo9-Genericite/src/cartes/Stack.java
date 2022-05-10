@@ -1,5 +1,7 @@
 package cartes;
 
+import java.util.Random;
+
 public class Stack<T> {
 
 	private Object[] data;
@@ -65,6 +67,20 @@ public class Stack<T> {
 			this.resize(this.data.length / 2);
 		}
 		return res;
+	}
+	
+	public  void shuffleArray()
+	{
+	    int index;
+	    T temp;
+	    Random random = new Random();
+	    for (int i = this.data.length - 1; i > 0; i--)
+	    {
+	        index = random.nextInt(i + 1);
+	        temp = (T) this.data[index];
+	        this.data[index] = this.data[i];
+	        this.data[i] = temp;
+	    }
 	}
 
 }

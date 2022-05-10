@@ -49,13 +49,9 @@ public class Personne {
 	}
 
 	// Retourne la personne  a l' id passe en parametre 
-	public static Personne searchInHashTable(Hashtable<Personne, Integer> hashTable, int id) {
-		Personne searchedPerson= null;
-		for(Entry<Personne, Integer> p:hashTable.entrySet()) {
-			if(id == p.getKey().getId()) {
-				searchedPerson = p.getKey();
-			}
-		}
+	public static Personne searchInHashTable(Hashtable<Integer, Personne> hashTable, int id) {
+		Personne searchedPerson= hashTable.get(id);
+		
 		return searchedPerson;
 	}
 
@@ -77,13 +73,13 @@ public class Personne {
 		System.out.println(arrayList);
 
 		// Question 3
-		Hashtable<Personne, Integer> hashTable = new Hashtable<Personne, Integer>();
-		hashTable.put(p1, p1.getId());
-		hashTable.put(p2, p2.getId());
-		hashTable.put(p3, p3.getId());
-		hashTable.put(p4, p4.getId());
-		hashTable.put(p5, p5.getId());
-		hashTable.put(p6, p6.getId());
+		Hashtable<Integer, Personne> hashTable = new Hashtable<Integer, Personne>();
+		hashTable.put( p1.getId(), p1);
+		hashTable.put( p2.getId(), p2);
+		hashTable.put( p3.getId(), p3);
+		hashTable.put( p4.getId(), p4);
+		hashTable.put( p5.getId(), p5);
+		hashTable.put( p6.getId(), p6);
 		System.out.println(hashTable);
 
 		System.out.println(p1 + " est stoque a l'indice " + searchInList(arrayList, p1));
