@@ -11,8 +11,8 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//	Guichet guy1 = new Guichet();
-			RhFrame guy2 = new RhFrame();
+			Guichet guy1 = new Guichet();
+		//	RhFrame guy2 = new RhFrame();
 		
 			
 			

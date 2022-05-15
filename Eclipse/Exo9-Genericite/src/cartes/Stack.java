@@ -1,5 +1,6 @@
 package cartes;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Stack<T> {
@@ -83,4 +84,10 @@ public class Stack<T> {
 	    }
 	}
 
+	@Override
+	public String toString() {
+		return "Stack [data=" + Arrays.toString(data) + ", count=" + count + "]";
+	}
+
+	
 }

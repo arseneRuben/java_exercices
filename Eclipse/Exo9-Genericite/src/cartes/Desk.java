@@ -2,7 +2,7 @@ package cartes;
 
 public class Desk {
 
-	Stack<Cart> cartStack;
+	private Stack<Cart> cartStack;
 	
 	//
 	public Desk() {

@@ -28,11 +28,12 @@ public class Stock  {
 		ProductComparator comparator = new ProductComparator(c);
 		Collections.sort(this.liste, comparator);
 	}
-	
+	// Mon heure a sonne, 
 	public static void main(String[] args) {
 		Stock st = new Stock();
 		st.getListe().add(new Produit("Sac a dos", 150, 10));
 		st.getListe().add(new Produit("Bottes securite", 105, 19));
+		st.getListe().add(new Produit("Ventilateur", 1005, 199));
 		System.out.println("Liste initiale: "+st);
 		
 		st.sort();
@@ -44,7 +45,8 @@ public class Stock  {
 		st.sort(Criteria.PRICE);
 		System.out.println("Liste triee selon les prix: "+st);
 	
-		
+		ArrayList a = new ArrayList();
+		System.out.println(a);
 	}
 
 	@Override

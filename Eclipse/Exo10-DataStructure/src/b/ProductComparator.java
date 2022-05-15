@@ -1,9 +1,7 @@
 package b;
 
-import java.lang.runtime.SwitchBootstraps;
 import java.util.Comparator;
 
-import javax.swing.SwingConstants;
 
 public class ProductComparator implements Comparator<Produit> {
 
