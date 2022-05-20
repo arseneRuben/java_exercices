@@ -2,7 +2,6 @@ package model;
 
 import java.util.ArrayList;
 
-import exception.InvalideCapaciteException;
 
 public class Bain extends Thread {
 

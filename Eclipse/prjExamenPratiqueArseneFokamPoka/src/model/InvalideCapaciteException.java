@@ -1,4 +1,4 @@
-package exception;
+package model;
 
 public class InvalideCapaciteException extends Exception {
 

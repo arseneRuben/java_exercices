@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
-import exception.InvalideCapaciteException;
 import model.Bain;
+import model.InvalideCapaciteException;
 import model.NiveauListener;
 import model.SalleDeBain;
 
