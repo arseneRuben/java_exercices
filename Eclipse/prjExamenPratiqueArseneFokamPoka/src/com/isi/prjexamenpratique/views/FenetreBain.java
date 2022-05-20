@@ -7,9 +7,10 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import model.Bain;
+import model.NiveauListener;
 import model.SalleDeBain;
 
-public class FenetreBain extends JFrame implements ActionListener {
+public class FenetreBain extends JFrame implements ActionListener , NiveauListener{
 
 	private static final long serialVersionUID = 1L;
 	private JButton btMettreBouchon;
@@ -49,6 +50,8 @@ public class FenetreBain extends JFrame implements ActionListener {
 		btEneleverBouchon.addActionListener(this);
 		btOuvrirEau.addActionListener(this);
 		btFermerEau.addActionListener(this);
+		btQuitter.addActionListener(this);
+		btChangerBain.addActionListener(this);
 		// jpanels
 		JPanel mainPanel = new JPanel(new GridLayout(6, 1));
 		JPanel panelTitre = new JPanel();
@@ -66,6 +69,7 @@ public class FenetreBain extends JFrame implements ActionListener {
 		panelEau.add(btFermerEau);
 		panelInfos.add(lblNiveau);
 		panelInfos.add(lblCapacite);
+		lblCapacite.setText("Capacité : "+salle.getBain().getCapacite()+"");
 		panelProgress.add(progress);
 		panelBas.add(btChangerBain);
 		panelBas.add(btQuitter);
@@ -79,12 +83,21 @@ public class FenetreBain extends JFrame implements ActionListener {
 		mainPanel.add(panelBas);
 
 		// set le jframe
+		this.setTitle("Fenetre de bain");
 		this.getContentPane().add(mainPanel);
 		this.setSize(400, 300);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 
+	}
+
+	public SalleDeBain getSalle() {
+		return salle;
+	}
+
+	public void setSalle(SalleDeBain salle) {
+		this.salle = salle;
 	}
 
 	@Override
@@ -102,7 +115,27 @@ public class FenetreBain extends JFrame implements ActionListener {
 		if (e.getSource() == btOuvrirEau) {
 			this.salle.getBain().ouvrirRobinet();
 		}
+		if (e.getSource() == btQuitter) {
+			this.setVisible(false);
+			this.dispose();
+			this.salle.getBain().stop();
+		}
+		if (e.getSource() == btChangerBain) {
+			this.setVisible(false);
+			this.dispose();
+			this.salle.getBain().stop();
+			new FenetreConfiguration();
+		
+		}
 
+	}
+
+	@Override
+	public void changeNiveau(double e) {
+		// TODO Auto-generated method stub
+		lblNiveau.setText("Niveau "+e);
+		
+		this.progress.setValue((int) Math.round(e));
 	}
 
 }

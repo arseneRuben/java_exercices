@@ -18,7 +18,10 @@ public class Bain extends Thread {
 
 	private void setNiveau(double niveau) {
 		this.niveau = niveau;
-		this.notification();
+		
+		for (NiveauListener i : this.listeners) {
+			i.changeNiveau(niveau);
+		}
 	}
 
 	public double getCapacite() {
@@ -44,6 +47,7 @@ public class Bain extends Thread {
 			this.robinetOuvert = robinetOuvert;
 			this.listeners = listeners;
 		}
+	
 	}
 
 	public void ouvrirRobinet() {
@@ -74,10 +78,11 @@ public class Bain extends Thread {
 				}
 			}
 			if (this.isRobinetOuvert()) {
-				if (this.niveau + 1 >= 0) {
+				if (this.niveau + 1 < 225) {
 					this.setNiveau(this.niveau + 1);
 				}
 			}
+			System.out.println(this.niveau);
 
 			wait(500);
 		}
@@ -90,10 +95,8 @@ public class Bain extends Thread {
 			e.printStackTrace();
 		}
 	}
+	
+	
 
-	public void notification() {
-		for (NiveauListener i : this.listeners) {
-			i.changeNiveau(this.niveau);
-		}
-	}
+	
 }

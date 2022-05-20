@@ -80,12 +80,13 @@ public class FenetreConfiguration extends JFrame implements ActionListener {
 			Bain bain = new Bain(Double.parseDouble(this.txtCapacite.getText()), 0.0, true, true, al);
 			SalleDeBain salle = new SalleDeBain(bain);
 			FenetreBain fenetre = new FenetreBain(salle);
+			bain.addNiveauListener(fenetre);
+			fenetre.getSalle().getBain().start();
 		} catch (NumberFormatException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			System.out.println("Le nombre entre n'est pas de format valide");
 		} catch (InvalideCapaciteException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			System.out.println("Le nombre entre n'est pas une capacite valide. Veuillez choisir un autre entre 125 et 225");
 		}
 
 		this.setVisible(false);

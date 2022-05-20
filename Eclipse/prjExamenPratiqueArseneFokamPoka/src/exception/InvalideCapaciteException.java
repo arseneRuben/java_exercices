@@ -2,6 +2,11 @@ package exception;
 
 public class InvalideCapaciteException extends Exception {
 
+	@Override
+	public String toString() {
+		return "Capacite invalide. Elle doit etre prise entre 125 et 225";
+	}
+
 	public InvalideCapaciteException() {
 		// TODO Auto-generated constructor stub
 	}

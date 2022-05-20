@@ -1,6 +1,6 @@
 package model;
 
 public interface NiveauListener {
-	public void changeNiveau(double valeur);
+	public void changeNiveau(double e);
 
 }
