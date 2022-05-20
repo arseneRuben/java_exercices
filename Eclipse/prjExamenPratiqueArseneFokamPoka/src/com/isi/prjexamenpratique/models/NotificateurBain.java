@@ -1,4 +1,4 @@
-package reseau;
+package com.isi.prjexamenpratique.models;
 
 import java.io.IOException;
 import java.net.ServerSocket;

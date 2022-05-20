@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-import model.Bain;
-import model.NiveauListener;
-import model.SalleDeBain;
+import com.isi.prjexamenpratique.models.Bain;
+import com.isi.prjexamenpratique.models.NiveauListener;
+import com.isi.prjexamenpratique.models.SalleDeBain;
 
 public class FenetreBain extends JFrame implements ActionListener , NiveauListener{
 

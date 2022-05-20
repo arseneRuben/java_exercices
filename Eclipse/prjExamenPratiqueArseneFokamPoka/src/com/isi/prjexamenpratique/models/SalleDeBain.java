@@ -1,4 +1,4 @@
-package model;
+package com.isi.prjexamenpratique.models;
 
 public class SalleDeBain {
 	Bain bain;

@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
-import model.Bain;
-import model.InvalideCapaciteException;
-import model.NiveauListener;
-import model.SalleDeBain;
+import com.isi.prjexamenpratique.models.Bain;
+import com.isi.prjexamenpratique.models.InvalideCapaciteException;
+import com.isi.prjexamenpratique.models.NiveauListener;
+import com.isi.prjexamenpratique.models.SalleDeBain;
 
 public class FenetreConfiguration extends JFrame implements ActionListener {
 
