@@ -1,9 +1,15 @@
 package com.isi.prjexamenpratique.views;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
-public class FenetreBain extends JFrame {
+import model.Bain;
+import model.SalleDeBain;
+
+public class FenetreBain extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JButton btMettreBouchon;
@@ -15,8 +21,9 @@ public class FenetreBain extends JFrame {
 	private JProgressBar progress;
 	private JButton btChangerBain;
 	private JButton btQuitter;
-	
-	public FenetreBain(){
+	private SalleDeBain salle;
+
+	public FenetreBain(SalleDeBain salle) {
 		
 		// set le look and feel de l'OS
 		try {
@@ -24,7 +31,8 @@ public class FenetreBain extends JFrame {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
+		this.salle = salle;
 		// initialise les composants
 		btMettreBouchon = new JButton("Mettre le bouchon");
 		btEneleverBouchon = new JButton("Enlever le bouchon");
@@ -35,7 +43,12 @@ public class FenetreBain extends JFrame {
 		progress = new JProgressBar();
 		btChangerBain = new JButton("Changer le bain");
 		btQuitter = new JButton("Quitter");
-		
+
+		// Ajout des ecouteurs sur les boutons
+		btMettreBouchon.addActionListener(this);
+		btEneleverBouchon.addActionListener(this);
+		btOuvrirEau.addActionListener(this);
+		btFermerEau.addActionListener(this);
 		// jpanels
 		JPanel mainPanel = new JPanel(new GridLayout(6, 1));
 		JPanel panelTitre = new JPanel();
@@ -44,7 +57,7 @@ public class FenetreBain extends JFrame {
 		JPanel panelInfos = new JPanel();
 		JPanel panelProgress = new JPanel();
 		JPanel panelBas = new JPanel();
-		
+
 		// ajouter les controles aux jpanels
 		panelTitre.add(new JLabel("Controllez votre bain"));
 		panelBouchon.add(btMettreBouchon);
@@ -56,7 +69,7 @@ public class FenetreBain extends JFrame {
 		panelProgress.add(progress);
 		panelBas.add(btChangerBain);
 		panelBas.add(btQuitter);
-		
+
 		// panel principal
 		mainPanel.add(panelTitre);
 		mainPanel.add(panelBouchon);
@@ -64,14 +77,32 @@ public class FenetreBain extends JFrame {
 		mainPanel.add(panelInfos);
 		mainPanel.add(panelProgress);
 		mainPanel.add(panelBas);
-		
+
 		// set le jframe
 		this.getContentPane().add(mainPanel);
 		this.setSize(400, 300);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
-		
+
 	}
-	
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == btMettreBouchon) {
+			this.salle.getBain().mettreBouchon();
+		}
+		if (e.getSource() == btEneleverBouchon) {
+			this.salle.getBain().enleverBouchon();
+		}
+		if (e.getSource() == btFermerEau) {
+			this.salle.getBain().fermerRobinet();
+		}
+		if (e.getSource() == btOuvrirEau) {
+			this.salle.getBain().ouvrirRobinet();
+		}
+
+	}
+
 }
